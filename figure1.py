@@ -1,13 +1,3 @@
-"""Figure 1: Inputs and Outputs of the Spike FFN (LLaMA-3.2-1B).
-
-(a) Value of input h to the spike FFN, MAGC (894) highlighted in red.
-(b) Magnitude of output |y| of the spike FFN; the first token exhibits
-    massive activations.
-
-Rendered as 3D stem plots (one row per token) for the random 5-token example
-used in the paper (seed 42, sample #1, whose first token is " stejně" and whose
-894th-channel values are 8.807, 0.814, -0.763, 0.335, 1.029).
-"""
 import os
 import argparse
 import numpy as np

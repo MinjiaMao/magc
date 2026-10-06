@@ -1,18 +1,3 @@
-"""Shared utilities for reproducing Figures 1-3 of the Single-Channel Spike paper
-on LLaMA-3.2-1B.
-
-Everything here is specific to LLaMA-3.2-1B:
-    d = 2048, m = 8192, spike FFN = block 1, MAGC i* = 894, dominant col j* = 1417.
-
-Contents
---------
-- model loading + language-model locator
-- random token sampling (Section 3 recipe, seed 42)
-- capture of the spike-FFN per-token input h and output y
-- FFN weight-matrix accessors and the alpha coefficient vector (Theorem 4.1)
-- 2D plotter  : plot_embedding_vector  (Figures 2, 3)
-- 3D plotter  : plot_vectors_3d        (Figure 1)
-"""
 import os
 import numpy as np
 import torch
@@ -99,12 +84,6 @@ def token_labels(tokenizer, ids):
 
 # ----------------------------- capture spike FFN -----------------------------
 def capture_spike_ffn(model, ids):
-    """Run one token sequence and return the spike-FFN per-token input h and
-    output y, both shape (seq_len, d). `ids` is a 1D list/array of token ids.
-
-    h = post_attention_layernorm(x + attn_out) at SPIKE_LAYER (the normalized
-    input actually fed to the MLP); y = MLP output at SPIKE_LAYER.
-    """
     lm = get_language_model(model)
     layer = lm.layers[SPIKE_LAYER]
     store = {}

@@ -1,15 +1,3 @@
-"""Figure 2: MAGC triggers massive activations (LLaMA-3.2-1B).
-
-Input to the spike FFN is drawn i.i.d. from Pareto(a=1) with random signs; the
-largest (raw, positive) value is placed into one channel -- the MAGC (894), the
-0th, or the random 1742nd channel -- keeping the rest of the input identical.
-Each input is fed through the spike FFN; we plot the input and the output.
-Only the MAGC produces massive activations in the output.
-
-All three variants share the same base Pareto draw, so the inputs differ only in
-the replaced channel. Output y-axes are fixed to the MAGC output's range so the
-0th / random cases are directly comparable.
-"""
 import os
 import argparse
 import numpy as np

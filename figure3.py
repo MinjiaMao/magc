@@ -1,13 +1,3 @@
-"""Figure 3: Visualization results for LLaMA-3.2-1B.
-
-(a) alpha vector when i* = 894 (Theorem 4.1), with the largest-magnitude entry
-    highlighted -- it is highly concentrated at j* = 1417.
-(b) omega_{1417}: the dominant down-projection column (normalized). It is highly
-    co-linear with the FFN output y (compare to Figure 1b) and carries the
-    massive-activation pattern.
-(c) omega_0 and (d) omega_1: other columns, with lower peak magnitude and no
-    massive-activation pattern.
-"""
 import os
 import argparse
 import numpy as np
