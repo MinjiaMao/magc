@@ -9,7 +9,8 @@ MAGC `i* = 894`, dominant column `j* = 1417`).
 ## Files
 | File | What it generates |
 |------|-------------------|
-| `figure1.py` | **Figure 1** — spike-FFN input `h` (MAGC 894 in red) and output magnitude `|y|`, 3D per token |
+| `identify_magc.py` | derive the spike block and MAGC `i*` from activations (instead of assuming them); recovers block 1, `i* = 894`, direction `+` |、
+| `figure1.py` | **Figure 1** — spike-FFN input `h` (MAGC 894 in red) and output magnitude `y`, 3D per token |
 | `figure2.py` | **Figure 2** — Pareto(a=1) input with the max placed in channel 894 / 0 / 1742, and the resulting spike-FFN outputs |
 | `figure3.py` | **Figure 3** — `alpha` vector (i\*=894, highlighting j\*=1417) and the down-projection columns `omega_{1417}`, `omega_0`, `omega_1` |
 
